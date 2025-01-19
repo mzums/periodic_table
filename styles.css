@@ -1,0 +1,236 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #121212;
+    background-image: url('image.png');
+    background-size: 30%;
+    background-repeat: no-repeat;
+    background-position: right;
+    position: relative;
+    color: #ffffff;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 1);
+    z-index: -1;
+}
+
+h1 {
+    margin: 20px;
+    color: #ffffff;
+}
+
+.table {
+    display: grid;
+    grid-template-columns: repeat(18, 50px);
+    gap: 5px;
+    padding: 20px;
+}
+
+.element {
+    border: 1px solid #555;
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s, background 0.3s;
+    color: #ffffff;
+}
+
+.element:hover {
+    transform: scale(1.1);
+    background: #1f1f1f;
+}
+
+.nonmetal {
+    border-color: #1a008f;
+    border-width: 3px;
+}
+
+.noble-gas {
+    border-color: #003c6d;
+    border-width: 3px;
+}
+
+.alkali-metal {
+    border-color: #9c7000;
+    border-width: 3px;
+}
+
+.alkaline-earth-metal {
+    border-color: #006805;
+    border-width: 3px;
+}
+
+.metalloid {
+    border-color: #9600a3;
+    border-width: 3px;
+}
+
+.halogen {
+    border-color: #970076;
+    border-width: 3px;
+}
+
+.transition-metal {
+    border-color: #d8007e;
+    border-width: 3px;
+}
+
+.lanthanide {
+    border-color: #b45100;
+    border-width: 3px;
+}
+
+.actinide {
+    border-color: #701a00;
+    border-width: 3px;
+}
+
+.post-transition-metal {
+    border-color: #610000;
+    border-width: 3px;
+}
+
+
+.legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 20px 0;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+}
+
+.color-box {
+    width: 20px;
+    height: 20px;
+    border: 3px solid transparent;
+    border-radius: 3px;
+}
+
+.color-box.nonmetal {
+    border-color: #1a008f;
+}
+
+.color-box.noble-gas {
+    border-color: #003c6d;
+}
+
+.color-box.alkali-metal {
+    border-color: #9c7000;
+}
+
+.color-box.alkaline-earth-metal {
+    border-color: #006805;
+}
+
+.color-box.metalloid {
+    border-color: #9600a3;
+}
+
+.color-box.halogen {
+    border-color: #970076;
+}
+
+.color-box.transition-metal {
+    border-color: #d8007e;
+}
+
+.color-box.lanthanide {
+    border-color: #b45100;
+}
+
+.color-box.actinide {
+    border-color: #701a00;
+}
+
+.color-box.post-transition-metal {
+    border-color: #610000;
+}
+
+
+
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    background: #000000;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    text-align: center;
+    z-index: 1000;
+    transition: transform 0.3s ease-in-out;
+    color: #ffffff;
+}
+
+.modal.active {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.close-btn {
+    background: #d32f2f;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.row-gap {
+    grid-column-start: span 22;
+    height: 10px;
+}
+
+.legend {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 20px;
+    font-size: 14px;
+    color: #ffffff;
+    margin-bottom: 50px;
+}
+
+.color-box {
+    width: 20px;
+    height: 20px;
+    border-radius: 5px;
+}
